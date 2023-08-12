@@ -1,0 +1,163 @@
+.product_details_page {
+  padding: $padding-xlarge;
+  &--data {
+    display: flex;
+    gap: $padding-xlarge;
+    .product_details-image {
+      flex: 1;
+      .selected-image {
+        border-radius: 12px;
+        overflow: hidden;
+        img {
+          content: url(https://picsum.photos/500/250.jpg);
+          height: 100%;
+          width: 100%;
+        }
+      }
+    }
+    .product_details-content {
+      flex: 1;
+      font-size: 1.4rem;
+      color: $ot-color-black;
+      .product-title {
+        font-size: 3.4rem;
+        font-weight: 400;
+        text-align: left;
+        color: $ot-color-black;
+        margin-bottom: $margin-xsmall;
+        display: flex;
+        justify-content: space-between;
+        .fav_icon {
+          display: flex;
+          color: $ot-color-grey-light-1;
+          cursor: pointer;
+          font-size: 1.6rem;
+          align-items: center;
+          i {
+            margin-right: $margin-xxxsmall;
+          }
+        }
+      }
+      .product-description {
+        font-size: 1.4rem;
+        color: $ot-color-black;
+        margin-bottom: $margin-xsmall;
+      }
+      .product-brand {
+        display: flex;
+        gap: 10px;
+        margin-bottom: $margin-xsmall;
+        &--label {
+          font-size: 1.6rem;
+          color: $ot-color-black-light;
+        }
+        &--value {
+          font-size: 1.6rem;
+          color: $ot-secondary-color;
+          cursor: pointer;
+        }
+      }
+      .product-price {
+        font-size: 2rem;
+        font-weight: bold;
+        line-height: 20px;
+        color: $ot-secondary-color;
+        margin-bottom: $margin-xsmall;
+      }
+      .product-delivery {
+        border-radius: 6px;
+        background: #f5f7fa;
+        padding: 15px;
+        width: 100%;
+        color: $ot-color-black;
+        margin-bottom: $margin-xsmall;
+        i {
+          font-size: 1.8rem;
+          margin-right: $margin-xxxsmall;
+        }
+      }
+
+      .product-actions {
+        display: flex;
+        gap: 20px;
+
+        .action-quantity {
+          display: flex;
+          gap: 10px;
+          justify-content: space-between;
+
+          align-items: center;
+          justify-content: center;
+          div {
+            // flex: 1;
+            padding: 0px 16px;
+            text-align: center;
+          }
+          .minus-button {
+            border-color: $ot-color-grey-light-1;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 5px;
+            background: $ot-color-white;
+            color: $ot-color-grey-light-1;
+            font-size: 2rem;
+            cursor: pointer;
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+          }
+          .add-button {
+            border-color: $ot-color-grey-light-1;
+            border-width: 1px;
+            border-style: solid;
+            border-radius: 5px;
+            background: $ot-color-white;
+            color: $ot-primary-color;
+            font-size: 2rem;
+            cursor: pointer;
+            -webkit-user-select: none; /* Safari */
+            -moz-user-select: none; /* Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none;
+          }
+        }
+        .action-cart {
+          //   flex: 2;
+          i {
+            font-size: 1.8rem;
+          }
+        }
+        .action-buy {
+          //   flex: 2;
+          button {
+            height: 100%;
+          }
+        }
+      }
+    }
+  }
+  .product_details-additional {
+    margin-top: $margin-xsmall;
+    .tabs-section {
+      display: flex;
+
+      .additional-tab {
+        padding: $padding-xsmall $padding-small;
+        cursor: pointer;
+        font-size: 14px;
+        color: $ot-color-black;
+        border-radius: 6px;
+        &.active {
+          background: #f5f7fa;
+          color: $ot-color-black;
+        }
+      }
+    }
+    .tabs-content {
+      margin: $margin-small 0px;
+      color: $ot-color-black;
+      font-size: 16px;
+    }
+  }
+}

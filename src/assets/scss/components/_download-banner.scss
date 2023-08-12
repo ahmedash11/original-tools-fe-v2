@@ -1,0 +1,119 @@
+.download-app-banner {
+  padding: $padding-xsmall $padding-xlarge;
+  text-align: center;
+  background-color: #091540;
+
+  color: white;
+  display: flex;
+  justify-content: center;
+  @include respond(tab-port) {
+    padding: $padding-small $padding-xsmall;
+    flex-direction: column;
+    align-items: center;
+  }
+  .header-section {
+    text-align: left;
+    padding: 0px 15px;
+    display: flex;
+    align-items: center;
+  }
+  &-header {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #ffffff;
+    text-transform: capitalize;
+  }
+  &-body {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #ffffff;
+  }
+  .app-store-buttons {
+    @include respond(tab-port) {
+      margin-top: $margin-xsmall;
+      text-align: left;
+    }
+    img {
+      width: 130px;
+      height: 100%;
+      margin: 0px 10px;
+    }
+  }
+}
+
+// Modal Section
+.download-app-modal {
+  padding: $padding-xsmall $padding-large;
+  text-align: center;
+  color: white;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  position: relative;
+
+  .download-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    flex: 1;
+    @include respond(tab-port) {
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .buttons-section {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+    flex: 1;
+
+    @include respond(tab-port) {
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+    }
+    .quick-action-btn {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #e6f7f9;
+      border-color: transparent;
+      border-radius: 4px;
+      color: #091540;
+      padding: 10px 10px;
+      height: 50px;
+    }
+  }
+
+  @include respond(tab-port) {
+    padding: $padding-small $padding-xsmall;
+    flex-direction: column;
+  }
+  .header-section {
+    text-align: left;
+    padding: 0px 15px;
+  }
+  &-header {
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 26px;
+    color: #091540;
+  }
+  &-body {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 18px;
+    color: #8e92a4;
+  }
+  .app-store-buttons {
+    gap: 10px;
+    margin-top: $margin-xsmall;
+    img {
+      width: 150px;
+      height: 46px;
+    }
+  }
+}

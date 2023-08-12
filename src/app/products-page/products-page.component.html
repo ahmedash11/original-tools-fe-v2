@@ -1,0 +1,89 @@
+<div class="products_page">
+  <div class="filter_section">
+    <div class="filter_section--header">Filter</div>
+    <div class="filter_section--body">
+      <div class="filter_type">
+        <div class="filter_type-header">Brand</div>
+        <div class="filter_type-body">
+          <ng-container *ngFor="let brand of brands">
+            <div class="filter_row">
+              <div class="filter_row-name" (click)="filterByBrand(brand.id)">
+                <i
+                  [class.fa-check-square-o]="filteredBrandsMap[brand.id]"
+                  [class.fa-square-o]="!filteredBrandsMap[brand.id]"
+                  class="fa"
+                  aria-hidden="true"
+                ></i>
+                {{ brand.title }}
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="filter_type">
+        <div class="filter_type-header">Categories</div>
+        <div class="filter_type-body">
+          <ng-container *ngFor="let category of categories">
+            <div class="filter_row">
+              <div
+                class="filter_row-name"
+                (click)="filterByCategory(category.id)"
+              >
+                <i
+                  [class.fa-check-square-o]="filteredCategoriesMap[category.id]"
+                  [class.fa-square-o]="!filteredCategoriesMap[category.id]"
+                  class="fa"
+                  aria-hidden="true"
+                ></i>
+                {{ category.title }}
+              </div>
+            </div>
+          </ng-container>
+        </div>
+      </div>
+
+      <div class="filter_type">
+        <div class="filter_type-header">Subcategories</div>
+        <div class="filter_type-body">
+          <div class="filter_row">
+            <div class="filter_row-name">
+              <i class="fa fa-square-o" aria-hidden="true"></i>
+              Ahmed
+            </div>
+          </div>
+          <div class="filter_row">
+            <div class="filter_row-name">
+              <i class="fa fa-check-square-o" aria-hidden="true"></i>
+              Mohamed
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="products_page--content">
+    <div class="brands_section">
+      <div class="">
+        <div class="horizontal__scroll-section">
+          <div class="horizontal__scroll-body">
+            <div *ngFor="let brand of brands">
+              <div class="brand_card_rect" (click)="filterByBrand(brand.id)">
+                <img [src]="brand.img" alt="" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="products_section">
+      <div class="row">
+        <div class="col-md-3" *ngFor="let product of products">
+          <app-product-card [product]="product"> </app-product-card>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

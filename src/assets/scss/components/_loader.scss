@@ -1,0 +1,15 @@
+.ot_loader {
+  border: 2px solid #fff;
+  border-top: 2px solid transparent;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  margin: auto;
+  animation: spin 0.5s linear infinite;
+  &--dark {
+    border: 2px solid $ot-dark-color !important;
+    border-top: 2px solid transparent !important;
+    width: 40px;
+    height: 40px;
+  }
+}

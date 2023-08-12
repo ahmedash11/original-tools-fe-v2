@@ -1,0 +1,20 @@
+<div class="order_summary">
+  <div class="order_summary--header">Order summary</div>
+  <div class="order_summary--subheader">
+    <div *ngFor="let item of items" class="ot-my-xxs">
+      {{ item.selectedQuantity }} x {{ item.title }} =
+      {{ item.selectedQuantity }} x {{ item.price }} = EGP
+      {{ item.selectedQuantity * item.price }}
+    </div>
+  </div>
+  <div class="order_summary--total_label">Total</div>
+  <div class="order_summary--total_amount">EGP {{ total }}</div>
+  <div class="order_summary--action">
+    <button
+      class="ot-button ot-button--main ot-pa-sm"
+      (click)="triggerAction()"
+    >
+      Checkout
+    </button>
+  </div>
+</div>

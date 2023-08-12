@@ -1,0 +1,127 @@
+<!-- Landing Page Start -->
+
+<div class="landing_page">
+  <div class="landing-header">
+    <div class="landing-header__text-box">
+      <div class="heading-primary--main text-ot-color-white">
+        Original tools home center
+      </div>
+      <div class="heading-primary--submain text-ot-color-white">
+        Ultimate 360-degree overview real estate, and property management
+        premium productivity tools.
+      </div>
+
+      <button class="ot-button ot-button--main ot-my-xs">
+        Be a part of us now
+      </button>
+    </div>
+  </div>
+  <div class="ot-my-lg">
+    <div class="horizontal__scroll-section">
+      <div class="horizontal__scroll-body">
+        <div *ngFor="let brand of brands">
+          <div class="brand_card_circle">
+            <img [src]="brand.img" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="ot-my-lg">
+    <div class="ot-px-xxs">
+      <div class="ot-row category_section">
+        <ng-container *ngFor="let category of categories">
+          <div class="col-1-of-4 ot-px-xxxs">
+            <div class="category_card">
+              <div class="category_card--title">{{ category.title }}</div>
+              <div class="category_card--image">
+                <img [src]="category.img" alt="" />
+              </div>
+
+              <div class="category_card--link">Explore now</div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+  <div class="ot-my-lg">
+    <div class="new_collection-banner">
+      <div class="new_collection-banner--text">
+        <div class="ot-mb-xxs heading-primary--main">New Collection</div>
+        <div class="heading-primary--sub">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam
+          nonumy eirmod
+        </div>
+        <button class="ot-button ot-button--main ot-my-xs">
+          Be a part of us now
+        </button>
+      </div>
+      <div class="new_collection-banner--image">
+        <img src="" alt="" />
+      </div>
+    </div>
+  </div>
+  <div class="ot-my-lg">
+    <div class="offers-banner">
+      <div class="heading-primary--main text-ot-color-white">Offers 20%</div>
+      <button class="ot-button ot-button--main ot-my-xs">Check it now</button>
+    </div>
+  </div>
+
+  <div class="ot-my-lg">
+    <div class="ot-px-xxs">
+      <div class="ot-row">
+        <ng-container *ngFor="let number of numbers">
+          <div class="col-1-of-3 ot-px-xxxs">
+            <div class="bulk_category_card">
+              <div class="bulk_category_card--title">Category name</div>
+              <div class="bulk_category_card--images">
+                <div class="category_image">
+                  <img
+                    src="
+                  "
+                    alt=""
+                  />
+                </div>
+                <div class="category_image">
+                  <img
+                    src="
+                  "
+                    alt=""
+                  />
+                </div>
+                <div class="category_image">
+                  <img
+                    src="
+                  "
+                    alt=""
+                  />
+                </div>
+                <div class="category_image">
+                  <img
+                    src="
+                  "
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+      </div>
+    </div>
+  </div>
+
+  <div class="ot-my-lg">
+    <div class="ot-px-xxs">
+      <div class="horizontal__scroll-section">
+        <div class="horizontal__scroll-body">
+          <ng-container *ngFor="let product of products">
+            <app-product-card [product]="product"> </app-product-card>
+          </ng-container>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

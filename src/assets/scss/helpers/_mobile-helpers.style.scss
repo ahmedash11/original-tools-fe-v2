@@ -1,0 +1,130 @@
+//Responsiveness Helpers
+.lap-hidden {
+  display: none !important;
+}
+.mob {
+  @include respond(tab-land) {
+    &-float-unset {
+      float: unset !important;
+    }
+    &-inline {
+      display: inline !important;
+    }
+    &-inline_block {
+      display: inline-block !important;
+    }
+
+    &-flex {
+      display: flex !important;
+      &__column {
+        flex-direction: column;
+        align-items: flex-start;
+        &-center {
+          display: flex !important;
+          flex-direction: column;
+          justify-content: center;
+          align-items: center;
+        }
+      }
+      &__row {
+        flex-direction: row;
+        align-items: flex-start;
+        &-center {
+          display: flex !important;
+          flex-direction: row;
+          justify-content: center;
+          align-items: center;
+        }
+        &-between {
+          display: flex !important;
+          flex-direction: row;
+          align-items: center;
+          justify-content: space-between;
+        }
+      }
+    }
+
+    &-block {
+      display: block !important;
+    }
+
+    &-hidden {
+      display: none !important;
+    }
+
+    &-pa-none {
+      padding: 0;
+    }
+    &-ma-none {
+      margin: 0;
+    }
+    /* Inserting this collapsed row between two flex items will make 
+        * the flex item that comes after it break to a new row */
+    &-break {
+      display: block;
+      flex-basis: 100%;
+      height: 0;
+    }
+
+    &-break-column {
+      display: block;
+      flex-basis: 100%;
+      width: 0;
+    }
+
+    @for $i from 1 through 10 {
+      &-flex-#{$i} {
+        flex: $i;
+      }
+    }
+    @for $i from 1 through 100 {
+      &-width-#{$i} {
+        width: $i * 1% !important;
+      }
+    }
+    @for $i from 1 through 200 {
+      &-width-px-#{$i} {
+        width: $i * 1px !important;
+      }
+    }
+    @for $i from 100 through 200 {
+      &-min-width-#{$i} {
+        min-width: $i * 1px;
+      }
+    }
+
+    @for $i from 100 through 200 {
+      &-max-width-#{$i} {
+        max-width: $i * 1px !important;
+      }
+    }
+    @for $i from 1 through 100 {
+      &-height-#{$i} {
+        height: $i * 1% !important;
+      }
+    }
+    @each $font-size in $font-sizes {
+      $final-string: str-replace($font-size + "", ".", "_");
+      &-font-rem-#{$final-string} {
+        font-size: unquote($font-size + "rem") !important;
+      }
+    }
+    @each $direction in $directions {
+      @each $size in $sizes {
+        $i: index($sizes, $size);
+        &-m#{$direction}-#{$size} {
+          @include marginDirection($direction, nth($constant_values, $i));
+        }
+      }
+    }
+
+    @each $direction in $directions {
+      @each $size in $sizes {
+        $i: index($sizes, $size);
+        &-p#{$direction}-#{$size} {
+          @include paddingDirection($direction, nth($constant_values, $i));
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,39 @@
+.landing_page {
+  padding: $padding-medium $padding-large;
+  background-color: $ot-color-white;
+
+  .new_collection-banner {
+    height: 60vh;
+    display: flex;
+    justify-content: space-between;
+    &--text {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+    }
+    &--image {
+      overflow: hidden;
+      border-radius: 12px;
+      img {
+        content: url(https://picsum.photos/250/550.jpg);
+      }
+    }
+  }
+}
+.offers-banner {
+  text-align: center;
+  height: 40vh;
+  width: 100%;
+  background-image: url(https://picsum.photos/800/400.jpg);
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  border-radius: 12px;
+  background-color: $ot-dark-color;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  color: $ot-color-white;
+}

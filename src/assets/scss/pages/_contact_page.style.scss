@@ -1,0 +1,59 @@
+.contactus-page {
+  background: #f5f7fa;
+  display: flex;
+  padding: $padding-xlarge 0px;
+  overflow: hidden;
+
+  .generic-form {
+    flex: 1;
+    margin-top: -4rem;
+    border-radius: 8px;
+    filter: drop-shadow(-1px 2px 5px rgba(0, 0, 0, 0.04));
+  }
+  .images-section {
+    flex: 2;
+    position: relative;
+
+    .image-1 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-51deg);
+      border-color: #ffffff;
+      border-width: 19px;
+      border-style: solid;
+      border-radius: 18px;
+      filter: drop-shadow(-1px 2px 5px rgba(0, 0, 0, 0.04));
+      width: 600px;
+      height: 450px;
+      max-width: 900px;
+      max-height: 750px;
+      img {
+        content: url(https://picsum.photos/900/800.jpg);
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .image-2 {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) rotate(-17deg);
+      border-color: #ffffff;
+      border-width: 19px;
+      border-style: solid;
+      border-radius: 18px;
+      filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.16));
+      background: #f8f9fb;
+      width: 600px;
+      height: 450px;
+      max-width: 900px;
+      max-height: 750px;
+      img {
+        content: url(https://picsum.photos/900/800.jpg);
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

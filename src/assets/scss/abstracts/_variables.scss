@@ -1,0 +1,139 @@
+// COLORS
+$ot-color-green: #0bbf7f;
+$ot-color-green-light: #7ed56f;
+$ot-color-green-dark: #28b485;
+
+$ot-color-orange-light: #ffb900;
+$ot-color-orange-dark: #ff7730;
+
+$ot-color-blue-light: #2998ff;
+$ot-color-blue-dark: #5643fa;
+
+$ot-color-grey-light-1: #e2e7ef;
+$ot-color-grey-light-2: #eee;
+
+$ot-color-grey-dark: #777;
+$ot-color-grey-dark-2: #999;
+$ot-color-grey-dark-3: #333;
+
+$ot-color-white: #fff;
+$ot-color-black: #242424;
+$ot-color-black-light: rgba(#242424, 0.5);
+
+$ot-primary-color: #feb800;
+$ot-primary-light: #e6f7f9;
+$ot-secondary-color: #84aaff;
+$ot-secondary-light-color: #fff4e8;
+$ot-gray-color: #585858;
+$ot-light-gray-color: #d6d6d6;
+$ot-dark-color: #091540;
+$ot-text-grey-02: #8e92a4;
+$ot-secondary-01: #f3f5f7;
+
+body {
+  --ot-color-green: #0bbf7f;
+  --ot-color-green-light: #7ed56f;
+  --ot-color-green-dark: #28b485;
+
+  --ot-color-orange-light: #ffb900;
+  --ot-color-orange-dark: #ff7730;
+
+  --ot-color-blue-light: #2998ff;
+  --ot-color-blue-dark: #5643fa;
+
+  --ot-color-grey-light-1: #e2e7ef;
+  --ot-color-grey-light-2: #eee;
+
+  --ot-color-grey-dark: #777;
+  --ot-color-grey-dark-2: #999;
+  --ot-color-grey-dark-3: #333;
+
+  --ot-color-white: #fff;
+  --ot-color-black: #242424;
+  --ot-color-black-light: rgba(#242424, 0.5);
+
+  --ot-primary-color: #feb800;
+  --ot-primary-light: #e6f7f9;
+  --ot-secondary-color: #84aaff;
+  --ot-secondary-light-color: #fff4e8;
+  --ot-gray-color: #585858;
+  --ot-light-gray-color: #d6d6d6;
+  --ot-dark-color: #091540;
+  --ot-text-grey-02: #8e92a4;
+  --ot-secondary-01: #f3f5f7;
+
+  --spacing-xxsmall: 1rem;
+  --spacing-xsmall: 2rem;
+  --spacing-small: 4rem;
+  --spacing-medium: 6rem;
+  --spacing-large: 8rem;
+  --spacing-xlarge: 12rem;
+  --spacing-xxlarge: 14rem;
+}
+
+$ot_colors: ot-light-gray-color, ot-color-green, ot-color-green-light,
+  ot-color-green-dark, ot-color-orange-light, ot-color-orange-dark,
+  ot-color-blue-light, ot-color-blue-dark, ot-color-grey-light-1,
+  ot-color-grey-light-2, ot-color-grey-dark, ot-color-grey-dark-2,
+  ot-color-grey-dark-3, ot-color-white, ot-color-black, ot-secondary-light-color,
+  ot-secondary-color, ot-primary-color, ot-primary-light, ot-dark-color,
+  ot-secondary-01, ot-gray-color, ot-color-black-light;
+
+@for $i from 1 through length($ot_colors) {
+  .bg-#{nth($ot_colors, $i)} {
+    background-color: var(--#{nth($ot_colors, $i)}) !important;
+  }
+  .border-color-#{nth($ot_colors, $i)} {
+    border-color: var(--#{nth($ot_colors, $i)}) !important;
+  }
+
+  .text-#{nth($ot_colors, $i)} {
+    color: var(--#{nth($ot_colors, $i)}) !important;
+  }
+
+  .border-color-#{nth($ot_colors, $i)} {
+    border: solid 1px !important;
+    border-color: var(--#{nth($ot_colors, $i)}) !important;
+  }
+  .bg-gray {
+    background: #e5e8e8;
+  }
+}
+
+// FONT
+$default-font-size: 1rem;
+
+// GRID
+$grid-width: 70rem;
+$gutter-vertical: 5rem;
+$gutter-vertical-small: 3rem;
+$gutter-horizontal: 3rem;
+
+//PADDING
+$padding-xxxsmall: 0.5rem;
+$padding-xxsmall: 1rem;
+$padding-xsmall: 2rem;
+$padding-small: 4rem;
+$padding-medium: 6rem;
+$padding-large: 8rem;
+$padding-xlarge: 12rem;
+$padding-xxlarge: 14rem;
+
+//Margin
+$margin-xxxsmall: 0.5rem;
+$margin-xxsmall: 1rem;
+$margin-xsmall: 2rem;
+$margin-small: 4rem;
+$margin-medium: 6rem;
+$margin-large: 8rem;
+$margin-xlarge: 12rem;
+$margin-xxlarge: 14rem;
+
+$constant_values: 0, 0, 0.25rem, 0.5rem, 1rem, 1.5rem, 3rem;
+$directions: "a", "y", "x", "t", "b", "l", "r";
+$sizes: "xxxs", "xxs", "xs", "sm", "md", "lg", "xl";
+
+$ot_values: $margin-xxxsmall, $margin-xxsmall, $margin-xsmall, $margin-small,
+  $margin-medium, $margin-large, $margin-xlarge;
+
+$font-sizes: "1", "1.2", "1.5", "1.8", "2", "2.3", "2.6", "3", "3.5", "4";

@@ -1,0 +1,41 @@
+.action-quantity {
+  display: flex;
+  gap: 10px;
+  justify-content: space-between;
+
+  align-items: center;
+  justify-content: center;
+  div {
+    // flex: 1;
+    padding: 0px 16px;
+    text-align: center;
+  }
+  .minus-button {
+    border-color: $ot-color-grey-light-1;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    background: $ot-color-white;
+    color: $ot-color-grey-light-1;
+    font-size: 2rem;
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+  }
+  .add-button {
+    border-color: $ot-color-grey-light-1;
+    border-width: 1px;
+    border-style: solid;
+    border-radius: 5px;
+    background: $ot-color-white;
+    color: $ot-primary-color;
+    font-size: 2rem;
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari */
+    -moz-user-select: none; /* Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none;
+  }
+}

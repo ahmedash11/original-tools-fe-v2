@@ -1,0 +1,15 @@
+.datepicker {
+  .mat-form-field-wrapper {
+    padding-bottom: 0px;
+  }
+}
+
+.over18-div {
+  mat-checkbox {
+    .mat-checkbox-layout {
+      display: flex !important;
+      text-align: left;
+      white-space: unset;
+    }
+  }
+}

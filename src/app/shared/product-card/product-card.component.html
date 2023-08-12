@@ -1,0 +1,27 @@
+<div class="product_card" (click)="goToProductDetails(product?.slug)">
+  <div class="badge-overlay">
+    <span class="top-left badge">
+      <span> Offer </span>
+    </span>
+  </div>
+  <div class="product_card--image">
+    <div class="product-image">
+      <img [src]="product?.img" alt="" />
+    </div>
+  </div>
+  <div class="product_card--content">
+    <div class="product-title">{{ product?.title }}</div>
+    <div class="product-description">
+      {{ product?.description }}
+    </div>
+    <div class="product-price">{{ product?.price }}LE</div>
+    <div class="product-actions">
+      <button class="ot-button ot-button--main">
+        Add to cart <i class="ot-ml-xxs fa fa-shopping-cart"></i>
+      </button>
+      <div class="fav_icon">
+        <i class="fa fa-heart"></i>
+      </div>
+    </div>
+  </div>
+</div>

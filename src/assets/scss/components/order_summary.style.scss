@@ -1,0 +1,42 @@
+.order_summary {
+  border-radius: 6px;
+  background: #f5f7fa;
+  font-style: normal;
+  text-align: left;
+  padding: $padding-small;
+
+  &--header {
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 22px;
+    color: #000000;
+    margin-bottom: $margin-xxsmall;
+  }
+  &--subheader {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 12px;
+    color: $ot-color-black-light;
+    margin-bottom: $margin-small;
+  }
+  &--total_label {
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 18px;
+    color: #000000;
+    margin-bottom: $margin-xxxsmall;
+  }
+  &--total_amount {
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 20px;
+    color: #84aaff;
+    margin-bottom: $margin-xsmall;
+  }
+
+  &--action {
+    text-align: right;
+    align-self: flex-end;
+    font-size: 16px;
+  }
+}

@@ -1,0 +1,122 @@
+.product_card {
+  border-color: $ot-color-grey-light-1;
+  border-width: 1px;
+  border-style: solid;
+  border-radius: 6px;
+  min-width: 250px;
+  position: relative;
+  margin: 0px $margin-xxsmall;
+  margin-bottom: $margin-small;
+  height: 100%;
+  cursor: pointer;
+
+  .badge-overlay {
+    position: absolute;
+    left: 0%;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 100;
+    -webkit-transition: width 1s ease, height 1s ease;
+    -moz-transition: width 1s ease, height 1s ease;
+    -o-transition: width 1s ease, height 1s ease;
+    transition: width 0.4s ease, height 0.4s;
+
+    .top-left {
+      position: absolute;
+      top: 20px;
+      left: 0;
+      background-color: $ot-secondary-color;
+      padding: 5px 40px;
+      color: $ot-color-white;
+      font-size: 1.4rem;
+      border-radius: 0px 4px 4px 0px;
+    }
+  }
+  .product-offer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    -ms-transform: translateX(-30%) translateY(0%) rotate(-45deg);
+    -webkit-transform: translateX(-30%) translateY(0%) rotate(-45deg);
+    transform: translateX(-30%) translateY(0%) rotate(-45deg);
+    -ms-transform-origin: top right;
+    -webkit-transform-origin: top right;
+    transform-origin: top right;
+    background-color: $ot-secondary-color;
+    color: $ot-color-white;
+    font-size: 1.4rem;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      margin: 0 -1px;
+      width: 100%;
+      height: 100%;
+      background: inherit;
+      min-width: 55px;
+    }
+  }
+  &--image {
+    border-bottom: 1px solid $ot-color-grey-light-1;
+    .product-image {
+      padding: $padding-small;
+      text-align: center;
+      overflow: hidden;
+      img {
+        width: 180px;
+        height: 90px;
+        // content: url(https://picsum.photos/250/250.jpg);
+        // height: 100%;
+        // width: 100%;
+      }
+    }
+  }
+  &--content {
+    padding: $padding-small $padding-xsmall;
+    text-align: left;
+    .product-title {
+      font-size: 1.6rem;
+      font-weight: 400;
+      text-align: left;
+      color: $ot-color-black;
+      margin-bottom: $margin-xxsmall;
+    }
+
+    .product-description {
+      font-size: 1.4rem;
+      font-weight: 400;
+      color: $ot-color-black-light;
+      margin-bottom: $margin-xxsmall;
+    }
+    .product-price {
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: $ot-secondary-color;
+      margin-bottom: $margin-xxsmall;
+    }
+    .product-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+
+      button {
+        flex: 4;
+        i {
+          font-size: 1.8rem;
+        }
+      }
+      .fav_icon {
+        flex: 1;
+        color: $ot-color-grey-light-1;
+        cursor: pointer;
+        font-size: 2rem;
+        text-align: right;
+      }
+    }
+  }
+}

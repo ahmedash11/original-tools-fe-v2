@@ -1,0 +1,280 @@
+<ng-container *ngIf="!LOGGED_IN">
+  <div class="text-center">
+    <div class="form-section generic-form width-50-percent margin-auto">
+      <div class="generic-form__header">
+        {{ AUTH_STATUS == 0 ? "Signup First" : "Login First" }}
+      </div>
+      <form [formGroup]="signUpForm">
+        <ng-container *ngIf="AUTH_STATUS == 0">
+          <input
+            type="text"
+            id="firstName"
+            formControlName="firstName"
+            placeholder="Enter your first name"
+          />
+
+          <input
+            type="text"
+            id="lastName"
+            formControlName="lastName"
+            placeholder="Enter your last name"
+          />
+
+          <input
+            type="text"
+            id="company"
+            formControlName="company"
+            placeholder="Enter your company name (optional)"
+          />
+
+          <input
+            type="tel"
+            id="phone"
+            formControlName="mobile"
+            placeholder="Enter your phone number (10 digits)"
+          />
+        </ng-container>
+
+        <input
+          type="email"
+          id="email"
+          formControlName="email"
+          placeholder="Enter your email address"
+        />
+        <input
+          type="password"
+          id="password"
+          formControlName="password"
+          placeholder="Enter a password"
+        />
+        <div class="ot-mt-sm">
+          <div class="text-center">
+            <button
+              class="ot-button ot-button--main ot-px-sm"
+              (click)="onSubmit()"
+            >
+              Submit
+            </button>
+          </div>
+          <div class="text-center ot-mt-xxs">
+            <a (click)="switchAuthStatus()" class="font-12 cursor-pointer">
+              {{
+                AUTH_STATUS == 1
+                  ? "Don't have an Account ? Signup"
+                  : "Already Have an Account ? Login"
+              }}
+            </a>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</ng-container>
+<ng-container *ngIf="LOGGED_IN">
+  <div class="checkout_page">
+    <div class="checkout_page--header">
+      <div class="checkout-header-label">
+        <div class="icon" [class.active]="CHECKOUT_STATUS >= 0">
+          <i
+            class="fa fa-stop-circle-o"
+            (click)="setStatus(0)"
+            aria-hidden="true"
+            *ngIf="CHECKOUT_STATUS == 0"
+          ></i>
+          <i
+            class="fa fa-check-circle-o"
+            (click)="setStatus(0)"
+            aria-hidden="true"
+            *ngIf="CHECKOUT_STATUS > 0"
+          ></i>
+        </div>
+        Shipping Address
+      </div>
+      <div class="checkout-header-label">
+        <div
+          class="icon"
+          [class.active]="CHECKOUT_STATUS >= 1"
+          [class.inactive]="CHECKOUT_STATUS < 1"
+        >
+          <i
+            class="fa fa-stop-circle-o"
+            (click)="setStatus(1)"
+            aria-hidden="true"
+            *ngIf="CHECKOUT_STATUS < 2"
+          ></i>
+          <i
+            class="fa fa-check-circle-o"
+            (click)="setStatus(1)"
+            aria-hidden="true"
+            *ngIf="CHECKOUT_STATUS >= 2"
+          ></i>
+        </div>
+        Payment
+      </div>
+      <div class="checkout-header-label">
+        <div
+          class="icon"
+          [class.active]="CHECKOUT_STATUS >= 2"
+          [class.inactive]="CHECKOUT_STATUS < 2"
+        >
+          <i
+            class="fa fa-stop-circle-o"
+            (click)="setStatus(2)"
+            aria-hidden="true"
+            *ngIf="CHECKOUT_STATUS < 2"
+          ></i>
+          <i
+            class="fa fa-check-circle-o"
+            (click)="setStatus(2)"
+            aria-hidden="true"
+            *ngIf="CHECKOUT_STATUS >= 2"
+          ></i>
+        </div>
+        Order Placed
+      </div>
+    </div>
+    <div class="checkout_page--body">
+      <ng-container *ngIf="CHECKOUT_STATUS == 0">
+        <div class="address_page">
+          <div class="address-card" *ngIf="customerAddress">
+            <div class="address-card--details">
+              <div class="address-card--details-label">Appartment</div>
+              <div class="address-card--details-value">
+                {{ customerAddress.appartment }}
+              </div>
+            </div>
+            <div class="address-card--details">
+              <div class="address-card--details-label">Floor</div>
+              <div class="address-card--details-value">
+                {{ customerAddress.floor }}
+              </div>
+            </div>
+
+            <div class="address-card--details">
+              <div class="address-card--details-label">Building</div>
+              <div class="address-card--details-value">
+                {{ customerAddress.building }}
+              </div>
+            </div>
+
+            <div class="address-card--details">
+              <div class="address-card--details-label">Street</div>
+              <div class="address-card--details-value">
+                {{ customerAddress.street }}
+              </div>
+            </div>
+
+            <div class="address-card--details">
+              <div class="address-card--details-label">Area</div>
+              <div class="address-card--details-value">
+                {{ customerAddress.area }}
+              </div>
+            </div>
+            <div class="address-card--details">
+              <div class="address-card--details-label">City</div>
+              <div class="address-card--details-value">
+                {{ customerAddress.city }}
+              </div>
+            </div>
+            <div class="delete-icon text-right">
+              <i class="fa fa-trash"></i>
+            </div>
+          </div>
+          <div class="add-address-card">
+            <div class="add-button" (click)="openAddAddress()">
+              <i *ngIf="!customerAddress" class="fa fa-plus"> </i>
+              <i *ngIf="customerAddress" class="fa fa-pencil"> </i>
+            </div>
+            <div class="">
+              {{
+                customerAddress ? "Update Existing Address" : "Add New Address"
+              }}
+            </div>
+          </div>
+        </div>
+        <div class="text-center" *ngIf="customerAddress">
+          <button
+            class="ot-button ot-button--main ot-px-sm"
+            (click)="setStatus(1)"
+          >
+            Next
+          </button>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="CHECKOUT_STATUS == 1">
+        <div class="payment-page">
+          <div class="payment_buttons-section">
+            <div class="payment-button active">Pay with Card</div>
+            <div class="payment-button inactive">Pay with Cash</div>
+          </div>
+          <div class="payment-page--body">
+            <div class="old_cards-section">
+              <div class="card-details">
+                <div class="card-details--label">
+                  <div
+                    class="icon"
+                    [class.active]="SELECTED_CARD >= 0"
+                    (click)="selectCard(0)"
+                  >
+                    <i
+                      [class.fa-circle-o]="SELECTED_CARD != 0"
+                      [class.fa-stop-circle-o]="SELECTED_CARD == 0"
+                      class="fa"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                  Card Ending with <b>1231</b>
+                </div>
+                <div class="card-detail--type"><img src="" alt="" /></div>
+              </div>
+              <div class="card-details">
+                <div class="card-details--label">
+                  <div
+                    class="icon"
+                    [class.active]="SELECTED_CARD >= 1"
+                    (click)="selectCard(1)"
+                  >
+                    <i
+                      class="fa"
+                      [class.fa-circle-o]="SELECTED_CARD != 1"
+                      [class.fa-stop-circle-o]="SELECTED_CARD == 1"
+                      aria-hidden="true"
+                    ></i>
+                  </div>
+                  Card Ending with <b>1231</b>
+                </div>
+                <div class="card-detail--type"><img src="" alt="" /></div>
+              </div>
+              <div class="add_card-button">Add a new card</div>
+            </div>
+            <div class="summary-section">
+              <app-order-summary-card
+                (action)="submitOrder($event)"
+              ></app-order-summary-card>
+            </div>
+          </div>
+        </div>
+      </ng-container>
+
+      <ng-container *ngIf="CHECKOUT_STATUS == 2">
+        <div class="success-page">
+          <div class="success-icon">
+            <img src="/assets/icons/success-icon.png" alt="" />
+          </div>
+          <div class="success-text">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Molestiae
+            eos hic inventore deleniti, voluptates et fuga impedit molestias,
+            aut itaque reiciendis alias quisquam similique fugiat expedita!
+            Aperiam perferendis libero omnis.
+          </div>
+          <div class="">
+            <button class="ot-button ot-button--main ot-pa-sm">
+              Back to homepage
+            </button>
+          </div>
+        </div>
+      </ng-container>
+    </div>
+  </div>
+</ng-container>

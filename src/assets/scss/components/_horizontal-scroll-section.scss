@@ -1,0 +1,20 @@
+.horizontal__scroll-section {
+  width: 100%;
+  margin: auto;
+
+  @include respond(tab-port) {
+    width: 100%;
+  }
+  .title {
+    color: rgba(9, 21, 64, 0.6);
+    font-size: 12px;
+    font-weight: bold;
+  }
+  .horizontal__scroll-body {
+    display: flex;
+
+    justify-content: space-between;
+
+    overflow-x: scroll;
+  }
+}

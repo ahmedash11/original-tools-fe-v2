@@ -1,0 +1,12 @@
+.ot-button {
+  border-radius: 6px;
+  color: $ot-color-white;
+  padding: $padding-xxsmall $padding-xsmall;
+  box-shadow: none;
+  border: none;
+  cursor: pointer;
+  font-size: 12px;
+  &--main {
+    background-color: $ot-primary-color;
+  }
+}

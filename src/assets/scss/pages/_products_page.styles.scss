@@ -1,0 +1,66 @@
+.products_page {
+  display: flex;
+  gap: 20px;
+  padding: $padding-small;
+  .filter_section {
+    border-radius: 6px;
+    background: #f5f7fa;
+    padding: $padding-small $padding-xsmall;
+    flex: 1;
+    height: fit-content;
+    &--header {
+      font-size: 20px;
+      font-weight: bold;
+      color: #242424;
+      margin-bottom: $margin-small;
+    }
+    &--body {
+      .filter_type {
+        &-header {
+          font-size: 16px;
+          font-weight: 500;
+          line-height: 16px;
+          color: #242424;
+          margin-bottom: $margin-xsmall;
+        }
+        &-body {
+          .filter_row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: $margin-xsmall;
+            &-name {
+              font-size: 14px;
+              color: #242424;
+              display: flex;
+              align-items: center;
+              cursor: pointer;
+
+              i {
+                font-size: 16px;
+                margin-right: $margin-xxxsmall;
+                cursor: pointer;
+              }
+            }
+            &-count {
+              font-size: 12px;
+              text-align: right;
+              color: rgba(36, 36, 36, 0.49);
+            }
+          }
+        }
+      }
+    }
+  }
+  &--content {
+    flex: 5;
+    overflow: hidden;
+    .brands_section {
+      margin-bottom: $margin-small;
+      padding: 0px $padding-xxsmall;
+    }
+    .products_section {
+      padding: $padding-xsmall $padding-xxsmall;
+    }
+  }
+}

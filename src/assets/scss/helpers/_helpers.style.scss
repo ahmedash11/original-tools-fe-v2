@@ -1,0 +1,106 @@
+@each $direction in $directions {
+  @each $size in $sizes {
+    $i: index($sizes, $size);
+    .ot-p#{$direction}-#{$size} {
+      @include paddingDirection($direction, nth($ot_values, $i));
+    }
+  }
+  @each $size in $sizes {
+    $i: index($sizes, $size);
+    .ot-m#{$direction}-#{$size} {
+      @include marginDirection($direction, nth($ot_values, $i));
+    }
+  }
+}
+
+// Helper Classes
+.no-text-decoration {
+  text-decoration: none;
+}
+
+.absoulte-center-y {
+  top: 50%;
+  transform: translateY(-50%);
+}
+.absoulte-center-x {
+  left: 50%;
+  transform: translateX(-50%);
+}
+.overflow-hidden-x {
+  overflow-x: hidden !important;
+}
+.margin-auto {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.no-radius {
+  border-radius: 0 !important;
+}
+
+.max-width-900 {
+  max-width: 900px !important;
+  margin: auto;
+}
+
+.max-width-1000 {
+  max-width: 1000px !important;
+  margin: auto;
+}
+.max-width-1100 {
+  max-width: 1100px !important;
+  margin: auto;
+}
+
+.width-auto {
+  width: auto !important;
+}
+.cursor-pointer {
+  cursor: pointer !important;
+}
+@each $font-size in $font-sizes {
+  $final-string: str-replace($font-size + "", ".", "_");
+  .font-rem-#{$final-string} {
+    font-size: unquote($font-size + "rem");
+  }
+}
+
+.text-capitalize {
+  text-transform: capitalize;
+}
+
+.no-box-shadow {
+  box-shadow: unset !important;
+}
+
+.ot-my-none {
+  margin-top: 0px !important;
+  margin-bottom: 0px !important;
+}
+
+.ot-mx-none {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.position-relative {
+  position: relative;
+}
+
+.gap_10 {
+  gap: 10px;
+}
+
+.gap_20 {
+  gap: 20px;
+}
+
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}

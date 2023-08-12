@@ -1,0 +1,76 @@
+<div class="modal-header">
+  <h4 class="modal-title">Add Address</h4>
+  <button
+    type="button"
+    class="close-button"
+    aria-label="Close"
+    (click)="activeModal.dismiss('cancel')"
+  >
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+<div class="modal-body">
+  <form class="form-section generic-form" [formGroup]="addressForm">
+    <div class="form-group">
+      <div class="form-group">
+        <input
+          type="text"
+          class=""
+          id="appartment"
+          formControlName="appartment"
+          placeholder="Appartment"
+        />
+      </div>
+      <div class="form-group">
+        <input
+          type="text"
+          class=""
+          id="floor"
+          formControlName="floor"
+          placeholder="Floor"
+        />
+      </div>
+      <input
+        type="text"
+        class=""
+        id="building"
+        formControlName="building"
+        placeholder="Building"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="text"
+        class=""
+        id="street"
+        formControlName="street"
+        required
+        placeholder="Street"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="text"
+        class=""
+        id="area"
+        formControlName="area"
+        placeholder="Area"
+      />
+    </div>
+    <div class="form-group">
+      <input
+        type="text"
+        class=""
+        id="city"
+        formControlName="city"
+        required
+        placeholder="City"
+      />
+    </div>
+    <div class="text-center">
+      <button class="ot-button ot-button--main ot-px-sm" (click)="onSubmit()">
+        Submit
+      </button>
+    </div>
+  </form>
+</div>

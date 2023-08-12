@@ -1,0 +1,130 @@
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin absCenter {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+// MEDIA QUERY MANAGER
+/*
+0 - 600px:      Phone
+600 - 900px:    Tablet portrait
+900 - 1200px:   Tablet landscape
+[1200 - 1800] is where our normal styles apply
+1800px + :      Big desktop
+
+$breakpoint arguement choices:
+- phone
+- tab-port
+- tab-land
+- big-desktop
+
+ORDER: Base + typography > general layout + grid > page layout > components
+
+1em = 16px
+*/
+@mixin respond($breakpoint) {
+  @if $breakpoint == phone {
+    @media only screen and (max-width: 37.5em) {
+      @content;
+    } //600px
+  }
+  @if $breakpoint == tab-port {
+    @media only screen and (max-width: 56.25em) {
+      @content;
+    } //900px
+  }
+  @if $breakpoint == tab-land {
+    @media only screen and (max-width: 75em) {
+      @content;
+    } //1200px
+  }
+  @if $breakpoint == big-desktop {
+    @media only screen and (min-width: 112.5em) {
+      @content;
+    } //1800
+  }
+}
+
+@mixin paddingDirection($direction, $value) {
+  @if $direction == "a" {
+    padding: $value;
+  }
+  @if $direction == "y" {
+    padding-top: $value;
+    padding-bottom: $value;
+  }
+  @if $direction == "x" {
+    padding-left: $value !important;
+    padding-right: $value !important;
+  }
+  @if $direction == "t" {
+    padding-top: $value;
+  }
+  @if $direction == "b" {
+    padding-bottom: $value;
+  }
+  @if $direction == "l" {
+    padding-left: $value;
+  }
+  @if $direction == "r" {
+    padding-right: $value;
+  }
+}
+
+@mixin marginDirection($direction, $value) {
+  @if $direction == "a" {
+    margin: $value !important;
+  }
+  @if $direction == "y" {
+    margin-top: $value !important;
+    margin-bottom: $value !important;
+  }
+  @if $direction == "x" {
+    margin-left: $value !important;
+    margin-right: $value !important;
+  }
+  @if $direction == "t" {
+    margin-top: $value !important;
+  }
+  @if $direction == "b" {
+    margin-bottom: $value !important;
+  }
+  @if $direction == "l" {
+    margin-left: $value !important;
+  }
+  @if $direction == "r" {
+    margin-right: $value !important;
+  }
+}
+@mixin circleButton($size) {
+  line-height: $size;
+  text-align: center;
+  width: $size;
+  height: $size;
+  border-radius: 50%;
+  color: $ot-color-white;
+  cursor: pointer;
+
+  &:hover {
+    border-radius: 50%;
+    border-style: solid;
+    background-color: rgba(255, 255, 255, 0.16);
+  }
+}
+
+@mixin flexColumnCenter {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}

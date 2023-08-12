@@ -1,0 +1,85 @@
+@for $i from 1 through 50 {
+  .font-#{$i} {
+    font-size: $i * 1px !important;
+  }
+}
+
+@for $i from 1 through 200 {
+  .radius-#{$i} {
+    border-radius: $i * 1px !important;
+  }
+}
+
+@for $i from 1 through 12 {
+  .flex-#{$i} {
+    flex: $i;
+  }
+}
+
+@for $i from 1 through 100 {
+  .width-#{$i}-percent {
+    width: $i * 1%;
+  }
+}
+
+@for $i from 1 through 100 {
+  .height-#{$i} {
+    height: $i * 1%;
+  }
+}
+
+@for $i from 1 through 100 {
+  .opacity-#{$i} {
+    opacity: ($i * 1) / 100;
+  }
+}
+@for $i from 1 through 100 {
+  .height-#{$i}-vh {
+    height: ($i * 1) * 1vh !important;
+  }
+}
+@for $i from 1 through 500 {
+  .max-width-#{$i} {
+    max-width: $i * 1px !important;
+  }
+}
+
+@for $i from 1 through 500 {
+  .min-width-#{$i} {
+    min-width: $i * 1px !important;
+  }
+}
+@for $i from 1 through 500 {
+  .min-height-#{$i} {
+    min-height: $i * 1px !important;
+  }
+}
+
+@for $i from 1 through 100 {
+  .height-px-#{$i} {
+    height: $i * 1px !important;
+  }
+}
+@for $i from 1 through 100 {
+  .width-px-#{$i} {
+    width: $i * 1px !important;
+  }
+}
+@for $i from 1 through 100 {
+  .line-height-px-#{$i} {
+    line-height: $i * 1px !important;
+  }
+}
+
+@function str-replace($string, $search, $replace: "") {
+  $index: str-index($string, $search);
+  @if $index {
+    @return str-slice($string, 1, $index - 1) + $replace +
+      str-replace(
+        str-slice($string, $index + str-length($search)),
+        $search,
+        $replace
+      );
+  }
+  @return $string;
+}

@@ -1,0 +1,34 @@
+<div class="d-flex gap_20 ot-pa-lg cart_page">
+  <div class="cart_list ot-px-sm">
+    <ng-container *ngFor="let item of items; let idx = index">
+      <div class="cart_card">
+        <div class="cart_card--img"><img src="" alt="" /></div>
+        <div class="cart_card--details">
+          <div class="cart_product-name">{{ item?.title }}</div>
+          <div class="cart_product-description">
+            {{ item?.description }}
+          </div>
+          <div class="cart_product-delete">
+            <i class="fa fa-trash" (click)="removeItem(idx)"></i>
+          </div>
+        </div>
+        <div class="cart_card--price">
+          <div class="cart_product-price">Egp {{ item?.price }}</div>
+          <div class="cart_product-quantity">
+            <div class="action-quantity">
+              <div class="minus-button" (click)="changeQuantity(idx, false)">
+                -
+              </div>
+              <div class="">{{ item?.selectedQuantity }}</div>
+              <div class="add-button" (click)="changeQuantity(idx)">+</div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <hr *ngIf="idx + 1 < numbers.length" />
+    </ng-container>
+  </div>
+  <div class="summary_section">
+    <app-order-summary-card></app-order-summary-card>
+  </div>
+</div>
